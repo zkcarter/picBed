@@ -1,0 +1,132 @@
+thread 'main' panicked at 'Missing function zklink::contracts::zklink::Zklink::deposit', crates/cairo-lang-sierra-generator/src/utils.rs:258:13
+stack backtrace:
+   0:     0x5606b3e9011a - std::backtrace_rs::backtrace::libunwind::trace::ha9053a9a07ca49cb
+                               at /rustc/84c898d65adf2f39a5a98507f1fe0ce10a2b8dbc/library/std/src/../../backtrace/src/backtrace/libunwind.rs:93:5
+   1:     0x5606b3e9011a - std::backtrace_rs::backtrace::trace_unsynchronized::h9c2852a457ad564e
+                               at /rustc/84c898d65adf2f39a5a98507f1fe0ce10a2b8dbc/library/std/src/../../backtrace/src/backtrace/mod.rs:66:5
+   2:     0x5606b3e9011a - std::sys_common::backtrace::_print_fmt::h457936fbfaa0070f
+                               at /rustc/84c898d65adf2f39a5a98507f1fe0ce10a2b8dbc/library/std/src/sys_common/backtrace.rs:65:5
+   3:     0x5606b3e9011a - <std::sys_common::backtrace::_print::DisplayBacktrace as core::fmt::Display>::fmt::h5779d7bf7f70cb0c
+                               at /rustc/84c898d65adf2f39a5a98507f1fe0ce10a2b8dbc/library/std/src/sys_common/backtrace.rs:44:22
+   4:     0x5606b3eb022e - core::fmt::write::h5a4baaff1bcd3eb5
+                               at /rustc/84c898d65adf2f39a5a98507f1fe0ce10a2b8dbc/library/core/src/fmt/mod.rs:1232:17
+   5:     0x5606b3e8d945 - std::io::Write::write_fmt::h4bc1f301cb9e9cce
+                               at /rustc/84c898d65adf2f39a5a98507f1fe0ce10a2b8dbc/library/std/src/io/mod.rs:1684:15
+   6:     0x5606b3e8fee5 - std::sys_common::backtrace::_print::h5fcdc36060f177e8
+                               at /rustc/84c898d65adf2f39a5a98507f1fe0ce10a2b8dbc/library/std/src/sys_common/backtrace.rs:47:5
+   7:     0x5606b3e8fee5 - std::sys_common::backtrace::print::h54ca9458b876c8bf
+                               at /rustc/84c898d65adf2f39a5a98507f1fe0ce10a2b8dbc/library/std/src/sys_common/backtrace.rs:34:9
+   8:     0x5606b3e9153f - std::panicking::default_hook::{{closure}}::hbe471161c7664ed6
+                               at /rustc/84c898d65adf2f39a5a98507f1fe0ce10a2b8dbc/library/std/src/panicking.rs:271:22
+   9:     0x5606b3e9127b - std::panicking::default_hook::ha3500da57aa4ac4f
+                               at /rustc/84c898d65adf2f39a5a98507f1fe0ce10a2b8dbc/library/std/src/panicking.rs:290:9
+  10:     0x5606b3e91ae8 - std::panicking::rust_panic_with_hook::h50c09d000dc561d2
+                               at /rustc/84c898d65adf2f39a5a98507f1fe0ce10a2b8dbc/library/std/src/panicking.rs:692:13
+  11:     0x5606b3e919e9 - std::panicking::begin_panic_handler::{{closure}}::h9e2b2176e00e0d9c
+                               at /rustc/84c898d65adf2f39a5a98507f1fe0ce10a2b8dbc/library/std/src/panicking.rs:583:13
+  12:     0x5606b3e90586 - std::sys_common::backtrace::__rust_end_short_backtrace::h5739b8e512c09d02
+                               at /rustc/84c898d65adf2f39a5a98507f1fe0ce10a2b8dbc/library/std/src/sys_common/backtrace.rs:150:18
+  13:     0x5606b3e916f2 - rust_begin_unwind
+                               at /rustc/84c898d65adf2f39a5a98507f1fe0ce10a2b8dbc/library/std/src/panicking.rs:579:5
+  14:     0x5606b34c07e3 - core::panicking::panic_fmt::hf33a1475b4dc5c3e
+                               at /rustc/84c898d65adf2f39a5a98507f1fe0ce10a2b8dbc/library/core/src/panicking.rs:64:14
+  15:     0x5606b36ac8a5 - cairo_lang_sierra_generator::utils::get_libfunc_signature::hffca7d0caed2143f
+  16:     0x5606b36a817d - cairo_lang_sierra_generator::local_variables::FindLocalsContext::analyze_call::he7f1613331a361cb
+  17:     0x5606b36a6aec - <cairo_lang_sierra_generator::local_variables::FindLocalsContext as cairo_lang_lowering::borrow_check::analysis::Analyzer>::visit_stmt::hce6d3562f1d066e0
+  18:     0x5606b36d0dd9 - cairo_lang_lowering::borrow_check::analysis::BackAnalysis<TAnalyzer>::get_block_info::h0b4bea186dabd64c
+  19:     0x5606b36733ff - <alloc::vec::Vec<T> as alloc::vec::spec_from_iter::SpecFromIter<T,I>>::from_iter::h6784e2eab47b91fa
+  20:     0x5606b36d0c1f - cairo_lang_lowering::borrow_check::analysis::BackAnalysis<TAnalyzer>::get_block_info::h0b4bea186dabd64c
+  21:     0x5606b36a056d - cairo_lang_sierra_generator::function_generator::priv_function_with_body_sierra_data::hc81dc1e6c0b69757
+  22:     0x5606b365ba06 - salsa::runtime::Runtime::execute_query_implementation::h3f72bd604935f634
+  23:     0x5606b367e290 - salsa::derived::slot::Slot<Q,MP>::read_upgrade::h5c0874443036b245
+  24:     0x5606b368adfc - salsa::derived::slot::Slot<Q,MP>::read::hc807e1386d8c2767
+  25:     0x5606b36cf907 - <salsa::derived::DerivedStorage<Q,MP> as salsa::plumbing::QueryStorageOps<Q>>::try_fetch::h873370d2ea4fe70b
+  26:     0x5606b3661373 - <DB as cairo_lang_sierra_generator::db::SierraGenGroup>::priv_function_with_body_sierra_data::__shim::h67d8f9c50c27763c
+  27:     0x5606b365b247 - salsa::runtime::Runtime::execute_query_implementation::h0c91b683ed712f0c
+  28:     0x5606b367cce0 - salsa::derived::slot::Slot<Q,MP>::read_upgrade::h57ce8f41b07390a5
+  29:     0x5606b3689b3c - salsa::derived::slot::Slot<Q,MP>::read::h5b0ab1f00718acde
+  30:     0x5606b36d0317 - <salsa::derived::DerivedStorage<Q,MP> as salsa::plumbing::QueryStorageOps<Q>>::try_fetch::haeb3832788ef7135
+  31:     0x5606b3661403 - <DB as cairo_lang_sierra_generator::db::SierraGenGroup>::function_with_body_sierra::__shim::h3939e132901b616e
+  32:     0x5606b3651f47 - cairo_lang_sierra_generator::ap_change::get_ap_change::hb1a86fb4045a2f98
+  33:     0x5606b365bc26 - salsa::runtime::Runtime::execute_query_implementation::h522bee1c52e0142f
+  34:     0x5606b3679b27 - salsa::derived::slot::Slot<Q,MP>::read_upgrade::h3550b2319b31f019
+  35:     0x5606b368a718 - salsa::derived::slot::Slot<Q,MP>::read::hb1604cd32ba82a5f
+  36:     0x5606b36cfdd8 - <salsa::derived::DerivedStorage<Q,MP> as salsa::plumbing::QueryStorageOps<Q>>::try_fetch::ha492f811ec1ac141
+  37:     0x5606b3661493 - <DB as cairo_lang_sierra_generator::db::SierraGenGroup>::get_ap_change::__shim::h95357df2f3096346
+  38:     0x5606b365ee90 - <cairo_lang_sierra_generator::specialization_context::SierraSignatureSpecializationContext as cairo_lang_sierra::extensions::lib_func::SignatureSpecializationContext>::try_get_function_ap_change::h0b980607803a08a4
+  39:     0x5606b3655499 - cairo_lang_sierra::extensions::lib_func::SignatureSpecializationContext::get_function_ap_change::h4a29c9615bdf36d9
+  40:     0x5606b3de40f8 - <cairo_lang_sierra::extensions::modules::function_call::FunctionCallLibfunc as cairo_lang_sierra::extensions::lib_func::NamedLibfunc>::specialize_signature::hc6887522fffdd27a
+  41:     0x5606b3de8095 - <cairo_lang_sierra::extensions::core::CoreLibfunc as cairo_lang_sierra::extensions::lib_func::GenericLibfunc>::specialize_signature::h26a58dc8f6e6e561
+  42:     0x5606b36d62a9 - <TGenericLibfunc as cairo_lang_sierra::extensions::lib_func::GenericLibfuncEx>::specialize_signature_by_id::h39244d0a6f001e7d
+  43:     0x5606b36ac6d9 - cairo_lang_sierra_generator::utils::get_libfunc_signature::hffca7d0caed2143f
+  44:     0x5606b36a817d - cairo_lang_sierra_generator::local_variables::FindLocalsContext::analyze_call::he7f1613331a361cb
+  45:     0x5606b36a6aec - <cairo_lang_sierra_generator::local_variables::FindLocalsContext as cairo_lang_lowering::borrow_check::analysis::Analyzer>::visit_stmt::hce6d3562f1d066e0
+  46:     0x5606b36d0dd9 - cairo_lang_lowering::borrow_check::analysis::BackAnalysis<TAnalyzer>::get_block_info::h0b4bea186dabd64c
+  47:     0x5606b36733ff - <alloc::vec::Vec<T> as alloc::vec::spec_from_iter::SpecFromIter<T,I>>::from_iter::h6784e2eab47b91fa
+  48:     0x5606b36d0c1f - cairo_lang_lowering::borrow_check::analysis::BackAnalysis<TAnalyzer>::get_block_info::h0b4bea186dabd64c
+  49:     0x5606b36733ff - <alloc::vec::Vec<T> as alloc::vec::spec_from_iter::SpecFromIter<T,I>>::from_iter::h6784e2eab47b91fa
+  50:     0x5606b36d0c1f - cairo_lang_lowering::borrow_check::analysis::BackAnalysis<TAnalyzer>::get_block_info::h0b4bea186dabd64c
+  51:     0x5606b36d0b77 - cairo_lang_lowering::borrow_check::analysis::BackAnalysis<TAnalyzer>::get_block_info::h0b4bea186dabd64c
+  52:     0x5606b36733ff - <alloc::vec::Vec<T> as alloc::vec::spec_from_iter::SpecFromIter<T,I>>::from_iter::h6784e2eab47b91fa
+  53:     0x5606b36d0c1f - cairo_lang_lowering::borrow_check::analysis::BackAnalysis<TAnalyzer>::get_block_info::h0b4bea186dabd64c
+  54:     0x5606b36733ff - <alloc::vec::Vec<T> as alloc::vec::spec_from_iter::SpecFromIter<T,I>>::from_iter::h6784e2eab47b91fa
+  55:     0x5606b36d0c1f - cairo_lang_lowering::borrow_check::analysis::BackAnalysis<TAnalyzer>::get_block_info::h0b4bea186dabd64c
+  56:     0x5606b36733ff - <alloc::vec::Vec<T> as alloc::vec::spec_from_iter::SpecFromIter<T,I>>::from_iter::h6784e2eab47b91fa
+  57:     0x5606b36d0c1f - cairo_lang_lowering::borrow_check::analysis::BackAnalysis<TAnalyzer>::get_block_info::h0b4bea186dabd64c
+  58:     0x5606b36733ff - <alloc::vec::Vec<T> as alloc::vec::spec_from_iter::SpecFromIter<T,I>>::from_iter::h6784e2eab47b91fa
+  59:     0x5606b36d0c1f - cairo_lang_lowering::borrow_check::analysis::BackAnalysis<TAnalyzer>::get_block_info::h0b4bea186dabd64c
+  60:     0x5606b36733ff - <alloc::vec::Vec<T> as alloc::vec::spec_from_iter::SpecFromIter<T,I>>::from_iter::h6784e2eab47b91fa
+  61:     0x5606b36d0c1f - cairo_lang_lowering::borrow_check::analysis::BackAnalysis<TAnalyzer>::get_block_info::h0b4bea186dabd64c
+  62:     0x5606b36733ff - <alloc::vec::Vec<T> as alloc::vec::spec_from_iter::SpecFromIter<T,I>>::from_iter::h6784e2eab47b91fa
+  63:     0x5606b36d0c1f - cairo_lang_lowering::borrow_check::analysis::BackAnalysis<TAnalyzer>::get_block_info::h0b4bea186dabd64c
+  64:     0x5606b36733ff - <alloc::vec::Vec<T> as alloc::vec::spec_from_iter::SpecFromIter<T,I>>::from_iter::h6784e2eab47b91fa
+  65:     0x5606b36d0c1f - cairo_lang_lowering::borrow_check::analysis::BackAnalysis<TAnalyzer>::get_block_info::h0b4bea186dabd64c
+  66:     0x5606b36a056d - cairo_lang_sierra_generator::function_generator::priv_function_with_body_sierra_data::hc81dc1e6c0b69757
+  67:     0x5606b365ba06 - salsa::runtime::Runtime::execute_query_implementation::h3f72bd604935f634
+  68:     0x5606b367e290 - salsa::derived::slot::Slot<Q,MP>::read_upgrade::h5c0874443036b245
+  69:     0x5606b368adfc - salsa::derived::slot::Slot<Q,MP>::read::hc807e1386d8c2767
+  70:     0x5606b36cf907 - <salsa::derived::DerivedStorage<Q,MP> as salsa::plumbing::QueryStorageOps<Q>>::try_fetch::h873370d2ea4fe70b
+  71:     0x5606b3661373 - <DB as cairo_lang_sierra_generator::db::SierraGenGroup>::priv_function_with_body_sierra_data::__shim::h67d8f9c50c27763c
+  72:     0x5606b365b247 - salsa::runtime::Runtime::execute_query_implementation::h0c91b683ed712f0c
+  73:     0x5606b367cce0 - salsa::derived::slot::Slot<Q,MP>::read_upgrade::h57ce8f41b07390a5
+  74:     0x5606b3689b3c - salsa::derived::slot::Slot<Q,MP>::read::h5b0ab1f00718acde
+  75:     0x5606b36d0317 - <salsa::derived::DerivedStorage<Q,MP> as salsa::plumbing::QueryStorageOps<Q>>::try_fetch::haeb3832788ef7135
+  76:     0x5606b3661403 - <DB as cairo_lang_sierra_generator::db::SierraGenGroup>::function_with_body_sierra::__shim::h3939e132901b616e
+  77:     0x5606b36a8e67 - cairo_lang_sierra_generator::program_generator::get_sierra_program_for_functions::h399be6ab3c54b0fb
+  78:     0x5606b365c0e5 - salsa::runtime::Runtime::execute_query_implementation::hb6f6ad39cd9affbf
+  79:     0x5606b3678800 - salsa::derived::slot::Slot<Q,MP>::read_upgrade::h05aff561f249e81d
+  80:     0x5606b368a1ac - salsa::derived::slot::Slot<Q,MP>::read::h962473b59c8bbddd
+  81:     0x5606b36ceacd - <salsa::derived::DerivedStorage<Q,MP> as salsa::plumbing::QueryStorageOps<Q>>::try_fetch::h3faef3085ea8085f
+  82:     0x5606b36995f2 - salsa::QueryTable<Q>::get::h5c2f71e708c6c41c
+  83:     0x5606b366153d - <DB as cairo_lang_sierra_generator::db::SierraGenGroup>::get_sierra_program_for_functions::__shim::h048418eebd0aeafc
+  84:     0x5606b356d394 - cairo_lang_starknet::contract_class::compile_contract_with_prepared_and_checked_db::h9212146a84950f1b
+  85:     0x5606b354cbf0 - <alloc::vec::Vec<T> as alloc::vec::spec_from_iter::SpecFromIter<T,I>>::from_iter::hd194e89cf78f7098
+  86:     0x5606b3516f3e - core::iter::adapters::try_process::ha80cc6cef0ed5d23
+  87:     0x5606b356ce09 - cairo_lang_starknet::contract_class::compile_path::h445161458f420584
+  88:     0x5606b356e473 - cairo_lang_starknet::contract_class::starknet_compile::h3e69cbb5ffd464b2
+  89:     0x5606b34c8b6c - starknet_compile::main::h48a65fe080a9e04e
+  90:     0x5606b34c43f3 - std::sys_common::backtrace::__rust_begin_short_backtrace::hbca278b4d3c82b7e
+  91:     0x5606b34cbbdd - std::rt::lang_start::{{closure}}::h8aca3ffd87a317dd
+  92:     0x5606b3e894fc - core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once::hd6efcd3bec896f2c
+                               at /rustc/84c898d65adf2f39a5a98507f1fe0ce10a2b8dbc/library/core/src/ops/function.rs:287:13
+  93:     0x5606b3e894fc - std::panicking::try::do_call::hce04e543bb1f4cbb
+                               at /rustc/84c898d65adf2f39a5a98507f1fe0ce10a2b8dbc/library/std/src/panicking.rs:487:40
+  94:     0x5606b3e894fc - std::panicking::try::h3342dd4e1f680968
+                               at /rustc/84c898d65adf2f39a5a98507f1fe0ce10a2b8dbc/library/std/src/panicking.rs:451:19
+  95:     0x5606b3e894fc - std::panic::catch_unwind::h148ce1e59ac0cee7
+                               at /rustc/84c898d65adf2f39a5a98507f1fe0ce10a2b8dbc/library/std/src/panic.rs:140:14
+  96:     0x5606b3e894fc - std::rt::lang_start_internal::{{closure}}::h25f9dda2057a67fe
+                               at /rustc/84c898d65adf2f39a5a98507f1fe0ce10a2b8dbc/library/std/src/rt.rs:148:48
+  97:     0x5606b3e894fc - std::panicking::try::do_call::h7caaaeaf9401650b
+                               at /rustc/84c898d65adf2f39a5a98507f1fe0ce10a2b8dbc/library/std/src/panicking.rs:487:40
+  98:     0x5606b3e894fc - std::panicking::try::he7d15285746cbbc2
+                               at /rustc/84c898d65adf2f39a5a98507f1fe0ce10a2b8dbc/library/std/src/panicking.rs:451:19
+  99:     0x5606b3e894fc - std::panic::catch_unwind::h89fb4f50c0301fe0
+                               at /rustc/84c898d65adf2f39a5a98507f1fe0ce10a2b8dbc/library/std/src/panic.rs:140:14
+ 100:     0x5606b3e894fc - std::rt::lang_start_internal::h078acd489417d3c1
+                               at /rustc/84c898d65adf2f39a5a98507f1fe0ce10a2b8dbc/library/std/src/rt.rs:148:20
+ 101:     0x5606b34cb415 - main
+ 102:     0x7f6b92b3fd90 - <unknown>
+ 103:     0x7f6b92b3fe40 - __libc_start_main
+ 104:     0x5606b34c0dd5 - _start
+ 105:                0x0 - <unknown>
